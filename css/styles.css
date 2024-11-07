@@ -1,0 +1,685 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    background-color: #0c052a;
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    position: relative;
+  }
+  
+  /* Main Container with max-width 1920px */
+  .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Ensure content is above the video */
+  }
+  
+/* Navbar Styling */
+.navbar {
+    width: 100%; /* Let the navbar inherit container width */
+    z-index: 9999;
+    position: absolute;
+}
+
+/* Centering the navbar content */
+.navbar-container {
+   
+    max-width: 1344px;
+    margin: 0 auto; /* Center the navbar */
+    display: flex;
+    justify-content: space-between; /* Spacing between menu items and logo */
+    align-items: center;
+    padding: 42px 20px;
+  
+}
+
+/* Navbar items */
+.navbar-item {
+    
+    color: #fff;
+    font-family: Josefin Sans;
+    font-weight: 100;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.has-arrow {
+    position: relative;
+    padding-right: 20px;  
+    margin-right: 20px;
+}
+
+/* Create the arrow using border */
+.has-arrow::after {
+    content: '';
+    position: absolute;
+    top: 40%; /* Center the arrow vertically */
+    right: 0; /* Position the arrow */
+    width: 5px; /* Width of the arrow */
+    height: 5px; /* Height of the arrow */
+    border: 2px solid #fff; /* Arrow color */
+    border-right: none;
+    border-top: none;
+    transform: translateY(-50%) rotate(-45deg); /* Keep the arrow inline with the text */
+}
+
+.navbar-item:hover {
+    color: #ff6b6b; /* Hover color */
+}
+
+/* Adjusted Logo Sprite Styling */
+.logo-sprite {
+    width: 300px; /* Adjusted smaller logo width */
+    height: 30px; /* Adjusted smaller logo height */
+    background-image: url('../sprite.png'); /* Path to your sprite */
+    background-position: -190px 0px; /* Adjust to display the correct part */
+    background-size: 800px 1000px;  /* Adjust to match your sprite size */
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin: 0;
+    transition: background-position 0.4s ease-in-out;
+}
+.logo-sprite:hover {
+    background-position: -190px -30px; /* Transition to this position on hover */
+}
+
+/* Align navbar-end */
+.navbar-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%; /* Ensures full height alignment */
+}
+
+/* Ensure no horizontal overflow on smaller screens */
+.navbar-menu {
+    display: flex;
+    gap: 15px; /* Spacing between links */
+}
+
+
+
+
+
+
+.video-block {
+    position: relative;
+    min-height: 600px; 
+    overflow: hidden;
+  }
+  
+  #background-video {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    max-width: 1920px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    position: fixed;
+
+  }
+
+
+
+
+
+
+  
+  /* Video Content (Text Over the Video) */
+  .video-content {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  
+/* Heading styling */
+.video-content h3 {
+    color: #fff;
+    font-family: Josefin Sans;
+    font-size: 28px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    letter-spacing: 4.5px;
+    line-height: 34px;
+    margin: 0 auto 6px;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Paragraph styling */
+.video-content p {
+   
+    color: #fff;
+    font-family: Josefin Sans;
+    font-size: 82px;
+    font-size: 64px;
+    letter-spacing: 1px;
+    letter-spacing: 4.5px;
+    letter-spacing: 3px;
+    line-height: 90px;
+    margin: 0 auto 26px;
+    max-width: 700px;
+    min-height: 77px;
+    text-align: center;
+    vertical-align: middle;
+}
+  
+/* Book Bar Section */
+.book-bar {
+    background-color: #eaf5f7;
+    z-index: 9999;
+    position: -webkit-sticky; /* Sticky for Safari */
+    position: sticky;
+    top: 0; /* Stick to the top of the viewport */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Book Bar Container */
+.book-bar-container {
+    background-color: #fff;
+    padding: 5px; /* Reduced padding inside the container */
+    border-radius: 32px; /* Smaller rounded corners */
+    margin: 0 auto;
+    max-width: 600px; /* Smaller maximum width for the bar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 14px; /* Reduced font size for a smaller overall appearance */
+}
+
+/* Individual Book Bar Items */
+.book-bar-item {
+    padding: 0 10px; /* Reduced padding between items */
+    text-align: center;
+}
+
+/* Add a grey separator between items */
+.book-bar-item:not(:first-child) {
+    border-left: 1px solid #ccc; /* Light grey separator */
+}
+
+/* Search Button Styling */
+.book-button .button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #160d3f; /* Primary brand color */
+    color: #fff;
+      /* Reduced height for the button */
+    border-radius: 50px; /* Fully rounded button with smaller radius */
+    padding: 14px 20px; /* Adjust padding to fit smaller button */
+    justify-content: space-evenly;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px; /* Smaller text size */
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* SVG Icon Styling */
+.book-button .button .search-icon {
+    width: 24px; /* Smaller icon size */
+    height: 24px;
+    fill: #1f9c98;
+}
+/* Change SVG icon to white on hover */
+.book-button .button:hover .search-icon {
+    fill: #160d3f; /* Change icon color to white on hover */
+}
+/* Search Button Hover Effect */
+.book-button .button:hover {
+    background-color: #1f9c98; /* Change background color on hover */
+}
+
+/* Individual Book Bar Items */
+.book-bar-item h4 {
+    font-weight: 300; /* Light weight for h4 */
+    text-align: left;
+    font-size: 14px; /* Reduced size for h4 */
+}
+
+.book-bar-item p {
+    font-weight: 700; /* Bold weight for p */
+    font-size: 14px; /* Reduced size for p */
+}
+
+
+
+
+
+
+
+  /* General button styling */
+  .button {
+    background-color: #fff; /* Button background color */
+    color: #160d3f; /* Button text color */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    padding: 12px 50px; /* Extra padding to ensure the arrow fits */
+    text-transform: uppercase; /* Uppercase text */
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative; /* Ensure the play-icon is positioned relative to the button */
+    display: inline-flex; /* Flexbox to align icon and text */
+    align-items: center; /* Vertically center text and icon */
+    transition: background-color 0.3s ease-in-out; /* Smooth hover transition */
+    overflow: visible; /* Ensure nothing is cut off */
+    transition: transform 0.6s ease; 
+  }
+  
+
+ 
+
+  /* Style for transparent background video button */
+  .button.transparent.video {
+    background-color: hsla(0, 0%, 100%, 0.92); /* Semi-transparent white background */
+  }
+
+  /* Additional padding for video button */
+  .button.video {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  /* Transparent background with blur */
+  .button.transparent {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: hsla(0, 0%, 100%, 0.3); /* Transparent white */
+    color: #160d3f; /* Text color */
+  }
+
+  /* Style for hover effect */
+  .button:hover {
+    transform: scale(0.95);
+  }
+
+  .play-icon {
+    width: 0;
+    height: 0;
+    border-left: 12px solid #160d3f; /* Play button color */
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin-right: 5px;
+    
+  }
+
+  /* Style for video modal button with cursor pointer */
+  .do-video-modal {
+    cursor: pointer;
+  }
+
+/* Rating Block Section */
+.tour-block {
+    padding: 125px 0 121px;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 999;
+}
+
+.tour-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Heading Styles */
+.tour-block h5 {
+    color: #160d3f;
+    font-size: 24px;
+    letter-spacing: 2.3px;
+    font-weight: 100;
+    margin-bottom: 50px;
+}
+
+/* Column Structure */
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Individual Column Styling */
+.column {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.tour-item {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tour-image {
+    width: 100%;
+    height: 500px; /* Adjust height */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Inner Text for the Tour Items */
+/* Text over the image */
+.tour-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align text to the bottom */
+    padding: 20px;
+    color: white;
+    opacity: 1; /* Text is now visible by default */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade-in on hover */
+    z-index: 999;
+
+    font-family: Josefin Sans;
+}
+
+ 
+
+.tour-text {
+    text-align: left;
+}
+
+.tour-text h4 {
+    letter-spacing: 2.3px;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff; /* Make text more visible */
+}
+
+.tour-text h2 {
+    font-weight: 400;
+    letter-spacing: 2.3px;
+    font-size: 34px;
+    margin: 5px 0 0 0;
+    color: #ffffff; /* Ensure text is visible */
+}
+
+/* Icon on the Right */
+.icon-right {
+    margin-left: auto;
+}
+
+.icon-right i {
+    font-size: 24px;
+    color: #ffffff; /* Make icon visible */
+}
+
+/* Button Styling */
+.bottom-button .button {
+    margin-top: 50px;
+    display: inline-block;
+    background-color: #160d3f;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.6s ease; 
+}
+
+.bottom-button .button:hover {
+    transform: scale(0.95);
+}
+
+
+
+
+/* Store Section */
+.store-section {
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+}
+
+ 
+
+.store-background {
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    position: relative;
+    color: #fff;
+}
+
+.store-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+}
+
+.store-columns {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.store-column {
+    text-align: left; /* Align text to the left */
+    max-width: 500px; /* Set a max width for the text area */
+}
+
+.store-column h3 {
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Store Button Styles */
+.store-actions .button {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin: 10px;
+    transition: transform 0.6s ease; 
+}
+
+.store-button.white {
+    background-color: #fff;
+    color: #160d3f;
+    border: 2px solid #fff;
+}
+
+.store-button.white:hover {
+    transform: scale(0.95);
+}
+
+.store-button.transparent-alt {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.store-button.transparent-alt:hover {
+    transform: scale(0.95);
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+    .store-background {
+        background-image: url('https://res.cloudinary.com/sailtrilogy/image/upload/q_auto:eco,f_auto/v1548195710/wordpress/Store_2x-1_znbwuh.jpg');
+    }
+
+    .store-column {
+        text-align: left; /* Keep text left-aligned on smaller screens */
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+.footer {
+    background-color: #306f7f;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.footer-links ul li a {
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ff6b6b; /* Add hover color */
+}
+
+/* Footer Description */
+.footer-description {
+    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #77b9c9;
+}
+
+/* Social Icons */
+.footer-social {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Center the icons */
+    align-items: center;
+}
+
+.footer-social a {
+    color: #fff;
+ 
+    font-size: 24px;
+    transition: color 0.3s ease;
+    padding: 0 15px; /* Add padding for spacing between icons */
+    position: relative;
+}
+
+.footer-social a:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px; /* Height of the grey line */
+    width: 1px; /* Thickness of the line */
+    background-color: #ccc; /* Grey line color */
+  
+}
+
+/* Social Icon Font Classes */
+.icon-facebook::before {
+    content: url('./icons/facebook.svg');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.icon-instagram::before {
+    content: url('./icons/instagram.svg');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-yelp::before {
+    content: url('./icons/yelp.svg');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.icon-tripadvisor::before {
+    content: url('./icons/tripadvisor.svg');
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
